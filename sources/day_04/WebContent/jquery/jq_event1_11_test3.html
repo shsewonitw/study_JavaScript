@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>이벤트</title>
+<script src="../js/jquery.js"></script>
+<script>
+$(function() {
+	$("#btnResult").on("click",function(){
+		var result = 0;
+		var n1 = $("#n1").val();
+		n1 = parseFloat(n1);
+		var n2 = $("#n2").val();
+		n2 = parseFloat(n2);
+		var operator = $("#operator option:selected").val();
+		console.log(n1+","+n2+","+operator);
+		if(operator == "+"){
+			result = n1+n2;
+			$("#result").html(result);
+		}else if(operator == "-"){
+			result = n1-n2;
+			$("#result").html(result);
+		}else if(operator == "*"){
+			result = n1*n2;
+			$("#result").html(result);
+		}else if(operator == "/"){
+			result = n1/n2;
+			$("#result").html(result);
+		}else if(operator == "%"){
+			result = n1%n2;
+			$("#result").html(result);
+		}
+	});
+});
+</script>
+<style>
+p{
+	font-size : 50px;
+}
+</style>
+</head>
+<body>
+
+	<label> 숫자1 : 
+		 <input type="text" id="n1" name="n1" size="5">
+	</label>
+	
+	<label> 연산자 : 
+		<select id="operator">
+			<option selected>+</option>
+			<option>-</option>
+			<option>*</option>
+			<option>/</option>
+			<option>%</option>
+		</select>
+	</label>
+	
+	<label> 숫자2 : 
+		 <input type="text" id="n2" name="n2" size="5">
+	</label>
+	
+	<button id="btnResult">결과 확인</button>
+	
+	<p id="result"></p>
+</body>
+</html>

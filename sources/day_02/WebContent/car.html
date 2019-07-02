@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+table,tr,td, th{
+	text-align: center;
+	border:1px solid black;
+	border-collapse: collapse;
+}
+
+th{
+	background-color: gray;
+}
+</style>
+
+
+</head>
+<body>
+<center>
+<h1>자동차 견적</h1>
+<img src="http://blog.rightbrain.co.kr/CMS1/wp-content/uploads/2015/12/1955-Mercedes-Benz-300SL.jpg" width="300" height="200">
+<table>
+<tr><th>옵션</th><th>추가 가격</th><th>선택</th></tr>
+<tr><td>인조가죽시트</td><td id="price_option1">2500000</td><td><input type="checkbox" id="option1"></td></tr>
+<tr><td>네비게이션</td><td id="price_option2">2500000</td><td><input type="checkbox" id="option2"></td></tr>
+<tr><td>썬루프</td><td id="price_option3">4400000</td><td><input type="checkbox" id="option3"></td></tr>
+<tr><th>(기본)차량가격</th><td colspan="2" id="price">13450000</td></tr>
+</table>
+</center>
+
+<script type="text/javascript">
+
+var price = parseInt(document.getElementById("price").innerText);
+var price_option1 = parseInt(document.getElementById("price_option1").innerText);
+var price_option2 = parseInt(document.getElementById("price_option2").innerText);
+var price_option3 = parseInt(document.getElementById("price_option3").innerText);
+
+document.getElementById("option1").onclick=function(){
+	if(this.checked){
+		price += price_option1;
+		document.getElementById("price").innerHTML = price;
+	} else{
+		price -= price_option1;
+		document.getElementById("price").innerHTML = price;
+	}
+}
+
+document.getElementById("option2").onclick=function(){
+	if(this.checked){
+		price += price_option2;
+		document.getElementById("price").innerHTML = price;
+	} else{
+		price -= price_option2;
+		document.getElementById("price").innerHTML = price;
+	}
+}
+
+document.getElementById("option3").onclick=function(){
+	if(this.checked){
+		price += price_option3;
+		document.getElementById("price").innerHTML = price;
+	} else{
+		price -= price_option3;
+		document.getElementById("price").innerHTML = price;
+	}
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title> 이벤트 </title>  
+<script src="../js/jquery.js"></script>
+<script>
+$(function(){
+
+	// 버튼1(클래스 btn_1)이 클릭되었을때
+	// 버튼2(클래스 btn_2)를 생성하세요.
+	// 생성되는 위치는 wrap 내부에 마지막 요소로 추가
+	
+	$(".btn_1").one("click",function(){
+		$("#wrap").append("<p><button class='btn_2'>버튼2</button></p>");
+	});
+	
+	
+	// 존재하지 않는 버튼에 대해서 이벤트를 등록하기 때문에
+	// 동작하지 않음
+	/*
+	$(".btn_2").on("mouseover focus",function(){
+		alert("btn_2~!");
+	});
+	*/
+	
+	$(document).on("mouseover focus",".btn_2",function(){
+		alert("btn_2~!");
+	});
+	
+	
+	$(".del_1").on("click",function(){
+		// 동적으로 추가된 요소인 경우 아래와 같이
+		// 선택자를 통한 이벤트 제거가 동작하지 않습니다.
+		// $(".btn_2").off("mouseover");
+		
+		// $(document).off("click",".btn_1");
+		$(".btn_1").off("click");
+	});
+	$(".del_2").on("click",function(){
+		// $(".btn_2").off("focus");
+		$(document).off("mouseover focus",".btn_2");
+	});
+});
+</script>
+</head>
+<body>
+<div id="wrap">
+	<p><button class="btn_1">버튼1</button></p>
+</div>
+<p>
+	<button class="del_1">버튼1 이벤트 해지</button> 
+	<button class="del_2">버튼2 이벤트 해지</button>
+</p>
+</body>
+</html>

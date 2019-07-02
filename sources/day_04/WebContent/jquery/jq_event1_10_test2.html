@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title> 이벤트 </title>  
+<script src="../js/jquery.js"></script>
+<script>
+$(function( ) {
+	var dan = 2;
+	
+	$("button").on("click",function(){
+		$("table").empty();
+		for(var i = 1 ; i <= 9 ; i++){
+			$("table").append('<tr><td>'+dan+' * '+i+ ' </td><td> = ' +dan*i+ '</td></tr>');
+		}
+		dan++;
+		console.log("dan: "+dan);
+		
+		if(dan==10)
+			dan=2;
+	});
+});
+</script>
+<style>
+	table td{
+		border: 0px solid black;
+		border-collapse : collapse;
+	}
+
+</style>
+</head>
+<body>
+
+<div><button>구구단 출력</button></div>
+<table>
+
+</table>
+</body>
+</html>

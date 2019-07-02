@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title> 이벤트 </title>  
+<script src="../js/jquery.js"></script>
+<script>
+$(function(){
+		// ID의 값이 btn1인 문서요소에 대해서
+		// 포커스 이벤트를 처리하세요.
+		// focus, blur, focusin, focusout
+		jQuery("#btn1").on({
+			"focus": function(){
+				$(".txt").css("background","red");
+			},
+			"blur": function(){
+				$(".txt").css("background","blue");
+			}
+		});
+		
+		
+		// ID의 값이 btn2인 문서요소에 대해서
+		// 마우스 감지 이벤트를 처리하세요.
+		// mouseover, mouseout
+		$("#btn2").on({
+			"mouseover focus": function(){
+				$(".txt").css("background","red");
+			},
+			"mouseout blur": function(){
+				$(".txt").css("background","blue");
+			}
+		});
+});
+</script>
+</head>
+<body>
+	<p><button id="btn1">버튼1</button></p>
+	<p><button id="btn2">버튼2</button></p>
+	<p class="txt">asdf</p>
+</body>
+</html>

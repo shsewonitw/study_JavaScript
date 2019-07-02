@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+// 함수 : 기능을 정의하는 문법
+// 함수는 선언된 이후 함수의 호출 구문에 의해서만 실행 될 수 있습니다. 
+
+
+function display(){
+	var n1 = document.f.n1.value;
+	var n2 = document.f.n2.value;
+	var r = sum(n1,n2);
+	
+	var box = document.getElementById("box");
+	box.innerHTML = n1 + " + " + n2 + " = " + r;
+}
+
+
+function sum(n1, n2) {
+	var r = parseInt(n1) + parseInt(n2);
+	return r;
+}
+
+</script>
+
+</head>
+<body>
+<form action ="#" name="f">
+1번째 숫자 : <input type="text" size="5" name="n1"><br/>
+2번째 숫자 : <input type="text" size="5" name="n2"><br/>
+</form>
+<input type="button" value="덧셈 결과 확인" onclick="display();">
+
+<div id="box"></div>
+
+</body>
+</html>

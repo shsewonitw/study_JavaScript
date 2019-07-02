@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+
+// 전역변수
+// 함수의 외부에 선언된 변수
+// 변수가 선언된 이후에는 계속해서 사용할 수 있는 변수
+// (함수내부에서도 접근이 가능)
+var count_global = 0;
+
+// 지역변수
+// 함수 내부에 선언된 변수
+// 해당 함수가 실행되는 동안에 사용할 수 있는 변수
+// 함수의 실행이 종료되면 외부에서는 사용할 수 없습니다.
+
+
+function count(){
+	var count_local = 0;
+	
+	count_global++;
+	count_local++;
+	
+	var_box = document.getElementById("box");
+	box.innerHTML="전역변수 : "+count_global+"  지역변수 : "+count_local;
+}
+
+
+document.onmouseover=function(e){
+	var pos_x = e.pageX;
+	console.log(pos_x);
+}
+
+</script>
+
+</head>
+<body>
+
+<input type="button" value="카운트" onclick="count(1);">
+
+<div id="box"></div>
+
+</body>
+</html>

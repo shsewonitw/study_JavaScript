@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+	var today = new Date();
+	
+	var year = today.getFullYear();
+	var month = today.getMonth();
+	var monthplus = parseInt(month)+1;
+	var day = today.getDate();
+	var limit=0;
+	var count=0;
+	if(month==0 || month==2 || month==4 || month==6 || month==7 ||month==9 ||month==11){
+		limit = 31;
+	} else if(month ==1){
+		limit = 28;
+	} else{
+		limit = 30;
+	}
+	
+	var temp = new Date(year,month,"01").getDay();
+	
+	var num = 1;
+	
+	document.write("<table border='2' style='border-collapse:collapse'>")
+	document.write("<caption>"+year+"년도 "+ monthplus +"월 달력</caption>")
+	document.write("<tr><td>일</td><td>월</td><td>화</td><td>수</td><td>목</td><td>금</td><td>토</td></tr>")
+	
+	document.write("<tr>")
+	for(var i = 0 ; i < temp ; i++){
+		document.write("<td></td>")
+		count++;
+	}
+	// 첫째주
+	for(var i = temp ; i <7 ; i++){
+		document.write("<td>" + num++ +"</td>")
+		count++;
+	}
+	document.write("</tr>")
+	
+	// 둘째주
+	document.write("<tr>")
+	for(var i = 0 ; i < 7 ; i++){
+		document.write("<td>" + num++ +"</td>")
+		count++;
+	}
+	document.write("</tr>")
+	
+	// 셋째주
+	document.write("<tr>")
+	for(var i = 0 ; i < 7 ; i++){
+		document.write("<td>" + num++ +"</td>")
+		count++;
+	}
+	document.write("</tr>")
+	
+	// 넷째주
+	document.write("<tr>")
+	for(var i = 0 ; i < 7 ; i++){
+		document.write("<td>" + num++ +"</td>")
+		count++;
+	}
+	document.write("</tr>")
+	
+	// 마지막주
+	document.write("<tr>")
+	for(var i = 0 ; num <=limit ; ){
+		document.write("<td>" + num++ +"</td>")
+		count++;
+	}
+	for( ; count< 35 ; ){
+		document.write("<td></td>");
+		count++;
+	}
+	document.write("</tr>")
+	document.write("</table>")
+</script>
+
+</head>
+<body>
+
+
+
+
+</body>
+</html>

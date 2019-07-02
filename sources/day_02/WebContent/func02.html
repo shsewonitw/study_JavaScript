@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+// 함수 : 기능을 정의하는 문법
+// 함수는 선언된 이후 함수의 호출 구문에 의해서만 실행 될 수 있습니다. 
+
+function showMsg(msg) {
+	var box = document.getElementById("box");
+	box.innerHTML = msg;
+}
+
+</script>
+
+</head>
+<body>
+<input type="button" value="클릭" onclick="showMsg('hello javascript');">
+
+<div id="box"></div>
+
+</body>
+</html>
